@@ -1,5 +1,5 @@
 <?php
-const SERVER_NAME = 'localhost';
-const DB_USERNAME = 'root';
+const SERVER_NAME = '';
+const DB_USERNAME = '';
 const DB_PASSWORD = '';
-const DB_NAME = 'iomundo';
+const DB_NAME = '';
