@@ -20,11 +20,11 @@ class Pagination
         return intval($_GET['page'] ?? 1);
     }
 
-   public function getUsers() {
+   public function getUsers($orderBy = 'id', $order = 'asc') {
 
         $start = ($this->currentPage() -1) * $this->limit;
 
-        $sql = "SELECT * FROM $this->table limit ?, ?";
+        $sql = "SELECT * FROM $this->table ORDER BY $orderBy $order limit ?, ?";
 
         $stm = $this->connection->prepare($sql);
         $stm->bindParam(1, $start, PDO::PARAM_INT);
