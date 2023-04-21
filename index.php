@@ -97,37 +97,46 @@ if (isset($_POST['submit'])) {
 
 </head>
 <body>
-<form action="index.php" method="post" enctype="multipart/form-data">
-    <div class="container">
-        <label for="username">Name</label>
-        <br>
-        <input type="text" name="username" id="username" placeholder="Enter your name">
-        <span class="error">
-            <?= $inputErrors['userNameError'] ?? ''; ?>
-        </span>
-        <br>
-        <label for="email">Email</label>
-        <br>
-        <input type="email" name="email" id="email" placeholder="Enter a valid email address">
-        <span class="error">
-            <?= $inputErrors['userEmailError'] ?? ''; ?>
-        </span>
-        <br>
-        <label for="image">Image</label>
-        <br>
-        <input type="file" id="image" name="image" placeholder="upload your photo">
-        <span class="error">
-            <?= $inputErrors['imageError'] ?? ''; ?>
-        </span>
-        <br>
-        <input type="checkbox" id="consent" name="consent" value="1"> <label for="consent">I accept the Terms of Service</label>
-        <span class="error">
-            <?= $inputErrors['userConsentError'] ?? ''; ?>
-        </span>
-        <br>
+<div class="row">
+    <div>
+        <img src="img.png" alt="" class="col-3">
     </div>
-    <button type="submit" name="submit">Submit</button>
-</form>
+    <div class="col-9 login-form">
+        <form action="index.php" method="post" enctype="multipart/form-data">
+            <div>
+                <label for="username">Name</label>
+                <br>
+                <input type="text" name="username" id="username" placeholder="Enter your name">
+                <span class="error">
+                    <?= $inputErrors['userNameError'] ?? ''; ?>
+                </span>
+                <br>
+                <label for="email">Email</label>
+                <br>
+                <input type="email" name="email" id="email" placeholder="Enter a valid email address">
+                <span class="error">
+                    <?= $inputErrors['userEmailError'] ?? ''; ?>
+                </span>
+                <br>
+                <label for="image">Image</label>
+                <br>
+                <input type="file" id="image" name="image" placeholder="upload your photo">
+                <span class="error">
+                  <?= $inputErrors['imageError'] ?? ''; ?>
+                </span>
+                <br>
+                <input type="checkbox" id="consent" name="consent" value="1"> <label for="consent">I accept the Terms of Service</label>
+                <span class="error">
+                    <?= $inputErrors['userConsentError'] ?? ''; ?>
+                </span>
+                <br>
+                <button type="submit" name="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+
+</div>
+
 </body>
 
 </html>

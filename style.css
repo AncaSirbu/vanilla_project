@@ -2,43 +2,81 @@
     width: 50%;
     color: red;
 }
+* {
+    box-sizing: border-box;
+}
+
+.login-form {
+    margin-top: 15%;
+}
+
 table {
     margin: auto;
-    padding: 20px;
+    padding: 20px 0 0 0;
+}
+
+.row::after {
+    content: "";
+    clear: both;
+    display: block;
+}
+
+[class*="col-"] {
+    float: left;
+    padding: 15px;
+}
+
+/* For desktop: */
+.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}
+
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    [class*="col-"] {
+        width: 100%;
+    }
 }
 
 td {
     padding: 20px;
 }
 
-form {
-    margin: auto;
-    padding: 20px;
-}
-
 input[type=text], input[type=email] {
-    width: 80%;
+    width: 100%;
     padding: 15px;
     margin: 5px 0 22px 0;
     display: inline-block;
     border: none;
     background: #f1f1f1;
 }
-.container {
-    margin: auto;
-    padding: 16px;
+input[type=file]{
+    width: 100%;
+    padding: 15px 0 10px 0;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
 }
+
 button {
     background-color: #7d47c9;
-    padding: 15px;
-    margin: 5px 0 22px 15px;
+    margin: 30px 0 22px 0px;
     position: relative;
     height: 45px;
     width: 112px;
     border: none;
 
 }
-img {
+profile-img {
     width: 50px;
     height: 50px;
 }

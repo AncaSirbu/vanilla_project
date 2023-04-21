@@ -40,7 +40,7 @@ $pages = $pagination->getPaginationNo();
                 <?= $user->id ?>
             </td>
             <td>
-                <img src="<?= $user->image ?>" alt="image">
+                <img src="<?= $user->image ?>" alt="image" class="profile-img">
             </td>
             <td>
                 <?= $user->name ?>
