@@ -1,6 +1,6 @@
 <?php
 require_once 'common.php';
-class Pagination
+class Users
 {
     private $connection, $table, $allRecords, $limit = 4;
     public function __construct($table) {

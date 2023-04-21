@@ -3,13 +3,12 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-require_once 'Pagination.php';
-$pagination = new Pagination('users');
+require_once 'Users.php';
+$user = new Users('users');
 $orderBy = $_GET['sort'] ?? 'id';
 $order = $_GET['order'] ?? 'asc';
-$users = $pagination->getUsers($orderBy, $order);
-$pages = $pagination->getPaginationNo();
-
+$users = $user->getUsers($orderBy, $order);
+$pages = $user->getPaginationNo();
 
 ?>
 
