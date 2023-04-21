@@ -1,6 +1,6 @@
 <?php
 require_once 'common.php';
-class Users
+class User
 {
     private $connection, $table, $allRecords, $limit = 4;
     public function __construct($table) {

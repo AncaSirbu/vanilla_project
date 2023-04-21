@@ -3,13 +3,19 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-require_once 'Users.php';
-$user = new Users('users');
+require_once 'User.php';
+$user = new User('users');
 $orderBy = $_GET['sort'] ?? 'id';
 $order = $_GET['order'] ?? 'asc';
 $users = $user->getUsers($orderBy, $order);
 $pages = $user->getPaginationNo();
 
+if(isset($_POST['export'])) {
+    require_once 'Export.php';
+    $export = new Export('users');
+    $export->exportAllRecords();
+    exit();
+}
 ?>
 
 <html lang="">
@@ -24,8 +30,11 @@ $pages = $user->getPaginationNo();
 <body>
     <div>
         <h2>All users</h2>
-        <a href="exportData.php" class="export"><i class="dwn"></i> Export</a>
+        <form method="post" action="users.php" style="float: right">
+            <button type="submit" name="export">Export Records</button>
+        </form>
     </div>
+
 
     <table>
         <tr>
