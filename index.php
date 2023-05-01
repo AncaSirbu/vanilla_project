@@ -3,12 +3,10 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 require_once 'common.php';
-
 $userData['username'] = strip_tags($_POST['username'] ?? null);
 $userData['email'] = $_POST['email'] ?? null;
 $userData['image'] = $_FILES['image'] ?? null;
 $userData['consent'] = $_POST['consent'] ?? false;
-$inputErrors = [];
 
 if (isset($_POST['submit'])) {
     if (!$userData['username']) {
@@ -107,6 +105,7 @@ if (isset($_POST['submit'])) {
                 <label for="username">Name</label>
                 <br>
                 <input type="text" name="username" id="username" placeholder="Enter your name">
+                <br>
                 <span class="error">
                     <?= $inputErrors['userNameError'] ?? ''; ?>
                 </span>
@@ -114,6 +113,7 @@ if (isset($_POST['submit'])) {
                 <label for="email">Email</label>
                 <br>
                 <input type="email" name="email" id="email" placeholder="Enter a valid email address">
+                <br>
                 <span class="error">
                     <?= $inputErrors['userEmailError'] ?? ''; ?>
                 </span>
@@ -121,11 +121,13 @@ if (isset($_POST['submit'])) {
                 <label for="image">Image</label>
                 <br>
                 <input type="file" id="image" name="image" placeholder="upload your photo">
+                <br>
                 <span class="error">
                   <?= $inputErrors['imageError'] ?? ''; ?>
                 </span>
                 <br>
                 <input type="checkbox" id="consent" name="consent" value="1"> <label for="consent">I accept the Terms of Service</label>
+                <br>
                 <span class="error">
                     <?= $inputErrors['userConsentError'] ?? ''; ?>
                 </span>
